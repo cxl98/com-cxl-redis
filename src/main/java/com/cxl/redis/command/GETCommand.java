@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class GetCommand implements Command {
+public class GETCommand implements Command {
     private List<String> params;
     @Override
     public void params(List<String> args) {
@@ -22,7 +22,7 @@ public class GetCommand implements Command {
             Map<String, String> string = BaseData.getInstance().string;
             String value = string.get(key);
             if (null!=value){
-                RedisEncode.writeInteger(os,value);
+                RedisEncode.writeBulkString(os,value);
             }
         }else{
             RedisEncode.writeError(os,"ERR wrong number of arguments for"+ "'"+"get"+"'" +"command");

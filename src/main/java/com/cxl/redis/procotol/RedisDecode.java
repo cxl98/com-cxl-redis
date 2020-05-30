@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class RedisDecode {
@@ -31,7 +30,7 @@ public class RedisDecode {
             RedisEncode.writeError(out, "ERR unknown command" + "'" + params + "'");
             throw new RedisException("服务端异常");
         } else {
-            className = String.format(Constant.COMMAND, params.substring(0,1).toUpperCase()+params.substring(1));
+            className = String.format(Constant.COMMAND, params.toUpperCase());
         }
         try {
             cls = Class.forName(className);

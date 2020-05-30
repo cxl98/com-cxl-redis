@@ -17,5 +17,10 @@ public class BaseData {
     public Map<String,HashMap<String,String>> map=new HashMap<>();
     public Map<String, Set<String>>set=new HashMap<>();
 //    private Map<String, LinkedList<String>> zset=
-
+    public String getString(String key){
+        return string.putIfAbsent(key, "");
+    }
+    public List<String> getList(String key){
+        return list.computeIfAbsent(key, k->new ArrayList<>());
+    }
 }
