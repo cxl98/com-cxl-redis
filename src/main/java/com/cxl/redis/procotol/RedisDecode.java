@@ -77,7 +77,7 @@ public class RedisDecode {
             return s;
         }
 
-        //        public long readInteger() throws IOException {
+//                public long readInteger() throws IOException {
 //            int read = is.read();
 //            if (-1==read){
 //                throw new RedisException(">>>命令不能为空");

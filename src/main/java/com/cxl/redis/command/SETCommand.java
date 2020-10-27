@@ -26,6 +26,7 @@ public class SETCommand implements Command {
             String string = BaseData.getInstance().getString(key);
             string=value;
             if (null!=string){
+
                 RedisEncode.writeString(os);
             }
         }else{
